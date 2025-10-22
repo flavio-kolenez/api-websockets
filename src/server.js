@@ -17,7 +17,7 @@ app.use(express.static(publicDirectory));
 const httpServer = http.createServer(app);
 
 httpServer.listen(PORT, () => {
-    console.log(`Server listening at: ${PORT}`);
+    console.log(`Server listening at: http://localhost:${PORT}`);
 });
 
 const io = new Server(httpServer);
