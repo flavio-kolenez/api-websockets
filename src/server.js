@@ -3,6 +3,7 @@ import url from "url";
 import path from "path";
 import http from "http";
 import { Server } from "socket.io";
+import "./dbConnect.js";
 
 const app = express();
 const PORT = process.env.port || 3000;
@@ -17,8 +18,8 @@ app.use(express.static(publicDirectory));
 const httpServer = http.createServer(app);
 
 httpServer.listen(PORT, () => {
-    console.log(`Server listening at: http://localhost:${PORT}`);
-});
+console.log(`\nServer listening at: \nhttp://localhost:${PORT} \n`);
+}); 
 
 const io = new Server(httpServer);
 
